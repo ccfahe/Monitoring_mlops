@@ -1,0 +1,43 @@
+version: '3.7'
+
+volumes:
+  grafana_data:{}
+
+networks:
+  front_tier:
+  back_tier:
+
+services:
+  db:
+    image: postgres:latest
+    container_name: db
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: admin
+      ports:
+        - "5432:5432"
+    networks:
+      - back_tier
+
+  adminer:
+    image: adminer:latest
+    container_name: adminer
+    restart: always
+    ports:
+      - "8080:8080"
+    networks:
+      - back_tier
+      - front_tier
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    restart: always
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./config/grafana_datasources.yaml:/etc/grafana/provisioning/datasources/datasources.yaml:ro
+    networks:
+      - back_tier
+      - front_tier
+
