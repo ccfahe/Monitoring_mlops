@@ -8,3 +8,11 @@ conda activate py11
 #cretae docker-compose.yml file
 
 https://www.analyticsvidhya.com/blog/2024/03/complete-guide-to-effortless-ml-monitoring-with-evidently-ai/
+
+evidenly ui
+
+
+Note:Report addition or dashboard creation on evidenly ai is allowed for cloud and enterprise addition onlyu
+
+
+create dummy calculation.py for data 
