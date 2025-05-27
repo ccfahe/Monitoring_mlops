@@ -16,3 +16,13 @@ Note:Report addition or dashboard creation on evidenly ai is allowed for cloud a
 
 
 create dummy calculation.py for data 
+
+change dummy data with model metrics and create table first then add the metrics in it 
+
+
+drift .json inside dashboards folder
+dashboards/drift.json
+
+
+Add volume for dashboard.yaml and garfana yaml
+
